@@ -1,0 +1,41 @@
+<templateSet group="user">
+  <template name="iife" value="(function(){&#10;    'use strict';&#10;}());" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="comp" value="import {Component} from 'angular2/core';&#10;&#10;@Component({&#10;    selector: '$componentName$',&#10;    template: `&lt;div&gt;$componentName$ component&lt;/div&gt;`&#10;})&#10;&#10;export default class $componentName$ {&#10;    &#10;}" shortcut="ENTER" toReformat="true" toShortenFQNames="true">
+    <variable name="componentName" expression="capitalize(String)" defaultValue="myComponent" alwaysStopAt="false" />
+    <context>
+      <option name="TypeScript" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="pipe" value="import {Pipe} from 'angular2/core';&#10;&#10;@Pipe({&#10;    name:'$pipeName$'&#10;})&#10;&#10;export class $pipeName$Pipe {&#10;    transform(value){&#10;        return value;&#10;    }&#10;}" shortcut="ENTER" toReformat="true" toShortenFQNames="true">
+    <variable name="pipeName" expression="capitalize(String)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="TypeScript" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="service" value="import {Injectable} from 'angular2/core';&#10;&#10;@Injectable()&#10;&#10;export class $serviceName$Service {};" toReformat="true" toShortenFQNames="true">
+    <variable name="serviceName" expression="capitalize(String)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="TypeScript" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcomp" value="import React from '&quot;react&quot;';&#10;import {render} from '&quot;react-dom&quot;';&#10;&#10;class $componentName$ extends React.Component{&#10;    render() {&#10;      return (&lt;h1&gt;My component&lt;/h1&gt;);&#10;    }&#10;}&#10;&#10;export {Products};" toReformat="true" toShortenFQNames="true">
+    <variable name="componentName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSX_HTML" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="reducer" value="function $name$(state = {}, {type, payload, error}) {&#10;    switch (type){&#10;        case 'case1':&#10;            return Object.assign({}, state, {});&#10;            break;&#10;        default:&#10;            return state;&#10;    }&#10;}&#10;&#10;export default $name$;" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
